@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+  font-family: "best";
+  src: url("fonts/Avenir\ Regular.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+*{
+    font-family: "Poppins";
+    
+}
+#bookDisplay{
+  font-family: "best";
+}
+.verse {
+  transition: 0.4s;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.verse.highlight {
+  transition: 0.4s;
+  background-color: #ABA09C;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+select, option{
+  cursor: pointer;
+}
+
+.overlay{
+  background-image: url("images/scenery.jpg");
+  background-size: cover;
+  height: 100vh;
+  filter: blur(50px);
+  z-index: 0;
+
+ 
+}
+
+#signUpModal, #signInModal{
+  transition: 1s;
+  animation-name: animatetop;
+  animation-duration: 1s;
+}
+
+
+
+.closeModal {
+  animation-name: animateClose;
+  animation-duration: 1s;
+}
+
+@keyframes animatetop{
+  from {top: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+} 
+
+@keyframes animateClose{
+
+  from {bottom: 0; opacity: 1;}
+  to {top: -300px; opacity: 0}
+}
+
+#bookDisplay::-webkit-scrollbar-track{
+  background-color: #18181B;
+}
+
+#bookDisplay::-webkit-scrollbar-thumb {
+  background: #55535C;
+  border-radius: 5px;
+}
+
+
+/* Chrome, Safari, Edge */
+.hide-scrollbar::-webkit-scrollbar {
+  background-color: #5f5f6b;
+  width: 5px;
+}
+
+.section {
+  opacity: 0;
+  pointer-events: none;       /* prevents clicks when hidden */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(20px); /* slight slide effect */
+}
+
+.section.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#18181b">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Bible App</title>
+</head>
+
+<body class="overflow-x-hidden overflow-y-hidden p-0  bg-zinc-900 mt-20  min-h-screen w-full">
+
+  <header id="header">
+
+    <div id="bibleHeader"
+      class="hidden transition-all fixed flex items-center justify-between top-0 left-0 border-b-1 border-zinc-500 w-full h-15 z-15">
+
+
+
+      <div class="flex ml-5 gap-4 bg-zinc-700 rounded-full text-white  h-10">
+        <select id="bookSelect"
+          class="w-25 ml-5 bg-zinc-700 rounded-full outline-none  transition-all hover:bg-white/30 " value="Genesis">
+        </select>
+
+        <div class="border-l-3 border-zinc-700 rounded-full "></div>
+        <select id="chapterSelect" class="bg-zinc-700 rounded-full outline-none px-5 transition-all hover:bg-white/30 ">
+        </select>
+      </div>
+
+      <button onclick="openSettings()">
+              <i class="bx bx-cog animate-spin text-white text-2xl  rounded-full p-1 mr-5 cursor-pointer transition-all hover:bg-white/30"></i>
+      </button>
+    </div>
+
+
+    <div id="youHeader"
+      class="transition-all fixed flex items-center justify-between top-0 left-0 border-b-1 border-zinc-500 w-full h-15">
+
+
+
+    </div>
+    <div id="plansHeader"
+      class="transition-all fixed flex items-center justify-between top-0 left-0 border-b-1 border-zinc-500 w-full h-15">
+    </div>
+    <div id="discoverHeader"
+      class="transition-all fixed flex items-center justify-between top-0 left-0 border-b-1 border-zinc-500 w-full h-15">
+    </div>
+    <div id="homeHeader"
+      class="transition-all fixed text-white flex items-center justify-between top-0 left-0  w-full h-15 z-14  ">
+      <h1 class="border-b-2 border-rad border-red-300 rounded-sm py-1 ml-5 mt-5 text-2xl ">Today</h1>
+
+
+    </div>
+
+  </header>
+
+
+
+
+
+  <main id="content" class="mb-30 transition-all min-h-screen w-full z-5 ">
+
+    <div id="bibleContent"
+      class="mb-20 transition-all section absolute left-1/2 -translate-x-1/2 w-80 h-100 transition-all rounded-lg md:w-200 md:h-400 lg:w-250 lg:h-600 z-14 ">
+      <div id="bookDisplay"
+        class="z-10 hide-scrollbar text-white h-190 md:h-97 overflow-y-scroll flex gap-1 flex-col mt-5 ">
+
+      </div>
+    </div>
+
+    </div>
+
+    <div class="overlay absolute inset-0 z-0 top-0 left-0  z-0"></div>
+
+    <!-- HOME CONTENT-->
+    <div id="homeContent" class="mt-5 ml-5 mr-5 section min-h-screen w-full text-white flex flex-col gap-5 relative">
+
+      <h1 id="greeting" class="text-2xl z-10">Good Afternoon, User</h1>
+      <aside class="h-50 w-full text-white z-10 relative">
+        <h1 class="text-xl">Verse of The Day</h1>
+        <p></p>
+      </aside>
+
+    </div>
+
+    <div id="plansContent" class="section h-full w-full ">
+
+    </div>
+
+    <div id="discoverContent" class="section h-full w-full ">
+
+    </div>
+
+    <div id="youContent" class="section h-full w-full ">
+
+    </div>
+
+  </main>
+
+  <!---SEMI-COMPLETED: ADD SELECTED EVENTS-->
+  <footer
+    class="fixed flex  justify-center gap-6 items-center  bottom-0 bg-zinc-900 w-full h-25  overflow-y-hidden lg:h-24 lg:bg-zinc-900/50 z-15 md:h-25 md:gap-10 "
+    id="footer">
+
+    <div
+      class="transition-all cursor-pointer md:hover:bg-white/30 rounded-lg flex flex-col justify-center items-center text-white "
+      id="footerHome" data-name="Home">
+      <i class="bx bx-home text-2xl lg:text-xl"></i>
+      <h1>Home</h1>
+    </div>
+    <div
+      class="transition-all cursor-pointer md:hover:bg-white/30 rounded-lg  flex flex-col justify-center items-center text-zinc-500 "
+      id="footerBible" data-name="Bible">
+      <i class="bx bx-bible text-2xl lg:text-xl"></i>
+      <h1>Bible</h1>
+    </div>
+    <div
+      class="transition-all cursor-pointer md:hover:bg-white/30 rounded-lg flex flex-col justify-center items-center text-zinc-500 "
+      id="footerPlans" data-name="Plans">
+      <i class="bx bx-check text-2xl lg:text-xl"></i>
+      <h1>Plans</h1>
+    </div>
+    <div
+      class="transition-all cursor-pointer md:hover:bg-white/30 rounded-lg  flex flex-col justify-center items-center text-zinc-500 "
+      id="footerDiscover" data-name="Discover">
+      <i class="bx bx-search text-2xl lg:text-xl"></i>
+      <h1>Discover</h1>
+    </div>
+
+    <!-- TODO: CODE IN ACCURATE PROFILE PICTURE -->
+    <div
+      class="transition-all cursor-pointer md:hover:bg-white/30 rounded-lg flex flex-col justify-center items-center text-zinc-500 "
+      id="footerYou" data-name="You">
+      <i class="bx bx-user text-2xl"></i>
+      <h1>You</h1>
+    </div>
+
+  </footer>
+
+
+
+
+  <script src="index.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('SW registered'))
+        .catch(err => console.log(err));
+    }
+  </script>
+  
+</body>
+
+</html>
