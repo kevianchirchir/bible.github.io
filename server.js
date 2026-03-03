@@ -39,20 +39,11 @@ app.get('/bible/:version/:chapter', async (req, res) => {
 
   try {
     const response = await fetch(
-      `https://rest.api.bible/v1/bibles/${version}/chapters/${chapter}?content-type=html&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=true`,
+      `https://rest.api.bible/v1/bibles/${version}/chapters/${chapter}?content-type=json&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=true`,
       { headers: { 'api-key': API_KEY } }
     );
 
-    const text = await response.text();
-    let data;
-
-    try {
-      data = JSON.parse(text);
-    } catch (parseErr) {
-      console.error("Error parsing API response:", text);
-      return res.status(500).json({ error: "Failed to parse API response" });
-    }
-
+    const data = await response.json();
     res.json(data);
 
   } catch (err) {
