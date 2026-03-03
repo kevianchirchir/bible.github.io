@@ -12,7 +12,7 @@ const response = await fetch(`https://bible-github-io.onrender.com/bible/${versi
 const userData = await response.json();
 console.log(userData);
 
-    bookDisplay.innerHTML = userData.html;
+    bookDisplay.innerHTML = userData.data.content;
     nextId = userData.data.next?.id || "N/A";
     previousID = userData.data.previous?.id || "N/A";
 
