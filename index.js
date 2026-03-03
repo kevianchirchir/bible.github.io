@@ -1,5 +1,3 @@
-const bookSelect = document.getElementById("bookSelect");
-let chapterSelect = document.getElementById("chapterSelect");
 const bookDisplay = document.getElementById("bookDisplay");
 var nextId = "N/A"
 var nextNumber = 0;
@@ -10,6 +8,7 @@ var previousID = "N/A";
 const API_KEY = "6v9trdUahLkJBGziXE07s";
 
 let chapterCount = 0;
+
 
 
 
@@ -53,17 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll("#footer > div");
   const displays = document.querySelectorAll("#content > div.section"); // Content sections
   const headers = document.querySelectorAll("#header > div");
-
-
   const verses = bookDisplay.childNodes;
+
+
+  
 
  
 
-  chapterSelect.innerHTML = "";
-  for (let i = 1; i <= chapterCount; i++) {
-    const chapter = new Option(i, i);
-    chapterSelect.add(chapter);
-  }
+ 
 
   loadVerse();
 
@@ -128,15 +124,38 @@ document.addEventListener('DOMContentLoaded', function () {
   showDisplay(initialSection);
   showHeader(initialSection);
 
+  const versionSelect = document.getElementById("versionSelect");
+  if (versionSelect) {
+    versionSelect.addEventListener('change', (e) => {
+      versionSelected = e.target.value;
+      loadVerse();
+    });
+  } else {
+    console.log('versionSelect not found');
+  }
+
 });
 
 
-
-
-/* TODO: SETUP OTHER SECTION DISPLAYS */
-function displayInformation(displayName) {
-
-  const display = document.querySelectorAll("#content > div");
-  console.log(display);
+function nextChapter() {
+    chapterSelected = nextId;
+    loadVerse();
 
 }
+
+function previousChapter() {
+    if (previousID == "GEN.Intro") {
+        return;
+    }
+    else {
+        chapterSelected = previousID;
+        loadVerse();
+    }
+
+
+}
+
+
+
+
+
