@@ -1,9 +1,33 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.2.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
     "tailwindcss": "^4.2.0"
   },
   "devDependencies": {
     "tailwind-scrollbar": "^4.0.2"
-  }
+  },
+  "name": "bible",
+  "version": "1.0.0",
+  "description": "A web-based Bible app that lets users read and navigate chapters, with multiple versions available. Loosely based off YouVersion's Bible App, the app will feature:\r - Highlighting Verses\r - Profiles\r - Creating Notes\r - Pulling Bible books and verses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevianchirchir/bible.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kevianchirchir/bible.github.io/issues"
+  },
+  "homepage": "https://github.com/kevianchirchir/bible.github.io#readme"
 }

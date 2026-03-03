@@ -1,38 +1,28 @@
 const bookDisplay = document.getElementById("bookDisplay");
-var nextId = "N/A"
-var nextNumber = 0;
-var nextBookID = "N/A";
-var versionSelected = "78a9f6124f344018-01";
-var chapterSelected = "GEN.1"
+var nextId = "N/A";
 var previousID = "N/A";
-const API_KEY = "6v9trdUahLkJBGziXE07s";
-
+var versionSelected = "78a9f6124f344018-01";
+var chapterSelected = "GEN.1";
 let chapterCount = 0;
 
-
-
-
 async function loadVerse() {
-  const response = await fetch(`https://rest.api.bible/v1/bibles/${versionSelected}/chapters/${chapterSelected}?content-type=html&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=true`, {
-    headers: { "api-key": API_KEY }
+  try {
+    // call your server, not the Bible API directly
+    // include verse spans by default (backend also defaults to true)
+    const response = await fetch(`http://localhost:3000/bible/${versionSelected}/${chapterSelected}?verseSpans=true`);
+    const userData = await response.json();
 
-  })
+    bookDisplay.innerHTML = userData.data.content;
+    nextId = userData.data.next?.id || "N/A";
+    previousID = userData.data.previous?.id || "N/A";
 
-  const userData = await response.json();
-  bookDisplay.innerHTML = (userData.data.content);
-  nextId = userData.data.next.id;
-  if (nextId == "GEN.1") {
-    console.log("can't go back");
+    if (nextId === "GEN.1") {
+      console.log("can't go back");
+    }
+  } catch (err) {
+    console.error("Error fetching verses:", err);
   }
-  else {
-    previousID = userData.data.previous.id;
-
-  }
-
-
-
 }
-
 
 
 bookDisplay.addEventListener("click", (e) => {
