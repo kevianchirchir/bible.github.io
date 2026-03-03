@@ -39,7 +39,7 @@ app.get('/bible/:version/:chapter', async (req, res) => {
 
   try {
     const response = await fetch(
-      `https://rest.api.bible/v1/bibles/${version}/chapters/${chapter}?content-type=html&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=${verseSpans}`,
+      `https://rest.api.bible/v1/bibles/${version}/chapters/${chapter}?content-type=html&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=true`,
       { headers: { 'api-key': API_KEY } }
     );
 
