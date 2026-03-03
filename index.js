@@ -4,7 +4,7 @@ var previousID = "N/A";
 var versionSelected = "78a9f6124f344018-01";
 var chapterSelected = "GEN.1";
 let chapterCount = 0;
-
+/* WEHAT */
 async function loadVerse() {
   try {
 
