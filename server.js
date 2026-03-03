@@ -32,8 +32,7 @@ app.get('/bible/:version/:chapter', async (req, res) => {
   const { version, chapter } = req.params;
   // allow overriding whether to include verse spans via query string
   // (e.g. /bible/ID/GEN.1?verseSpans=true)
-  // default to true when flag is omitted; only disable if explicitly set to 'false'
-  const verseSpans = req.query.verseSpans !== 'false';
+  const verseSpans = req.query.verseSpans === 'true';
   console.log("Request:", version, chapter, "verseSpans=", verseSpans);
 
   try {

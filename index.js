@@ -8,8 +8,7 @@ let chapterCount = 0;
 async function loadVerse() {
   try {
     // call your server, not the Bible API directly
-    // include verse spans by default (backend also defaults to true)
-    const response = await fetch(`http://localhost:3000/bible/${versionSelected}/${chapterSelected}?verseSpans=true`);
+    const response = await fetch(`https://bible-server.onrender.com/bible/${versionSelected}/${chapterSelected}`);
     const userData = await response.json();
 
     bookDisplay.innerHTML = userData.data.content;
