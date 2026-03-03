@@ -43,8 +43,8 @@ app.get('/bible/:version/:chapter', async (req, res) => {
       { headers: { 'api-key': API_KEY } }
     );
 
-    const data = await response.text();
-    res.send(data);
+    const data = await response.json();
+    res.json(data);
 
   } catch (err) {
     console.error("Fetch error:", err);
