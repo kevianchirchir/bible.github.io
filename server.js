@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 
 
 app.use(cors({
-  origin: 'https://kevianchirchir.github.io/bible.github.io/' 
+  origin: 'https://kevianchirchir.github.io/' 
 }));
 
 app.use(express.static('public'));
