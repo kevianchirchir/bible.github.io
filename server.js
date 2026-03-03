@@ -19,7 +19,8 @@ const PORT = process.env.PORT || 3000;
 
 
 app.use(cors({
-  origin: 'https://kevianchirchir.github.io' 
+  origin: [ 'https://kevianchirchir.github.io' ,
+  'http://127.0.0.1:5500/']
 }));
 
 app.use(express.static('public'));
