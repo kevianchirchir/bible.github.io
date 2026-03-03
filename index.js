@@ -8,7 +8,7 @@ let chapterCount = 0;
 async function loadVerse() {
   try {
 
-    const response = await fetch(`https://bible-server.onrender.com/bible/${versionSelected}/${chapterSelected}`);
+    const response = await fetch(`https://bible-github-io.onrender.com/bible/${versionSelected}/${chapterSelected}`);
     const userData = await response.json();
 
     bookDisplay.innerHTML = userData.data.content;
