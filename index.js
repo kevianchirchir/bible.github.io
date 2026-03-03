@@ -7,7 +7,7 @@ let chapterCount = 0;
 
 async function loadVerse() {
   try {
-    // call your server, not the Bible API directly
+
     const response = await fetch(`https://bible-server.onrender.com/bible/${versionSelected}/${chapterSelected}`);
     const userData = await response.json();
 
@@ -29,7 +29,6 @@ bookDisplay.addEventListener("click", (e) => {
   if (!verse) return;
 
 
-  // Toggle the highlight class
   verse.classList.toggle("highlight");
   console.log("yes");
 
@@ -39,7 +38,7 @@ bookDisplay.addEventListener("click", (e) => {
 
 document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll("#footer > div");
-  const displays = document.querySelectorAll("#content > div.section"); // Content sections
+  const displays = document.querySelectorAll("#content > div.section");
   const headers = document.querySelectorAll("#header > div");
   const verses = bookDisplay.childNodes;
 
