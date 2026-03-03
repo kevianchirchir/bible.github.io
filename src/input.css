@@ -1,2 +1,15 @@
-@import "tailwindcssfo";
+@import "tailwindcss";
+
 @plugin 'tailwind-scrollbar';
+
+.s1 {
+  @apply text-3xl font-bold ;
+}
+
+.v{
+        @apply text-sm text-red-300;
+}
+
+#bookDisplay p{
+    @apply text-xl mb-3;
+}

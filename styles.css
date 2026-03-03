@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @font-face {
   font-family: "best";
@@ -13,17 +14,21 @@
 #bookDisplay{
   font-family: "best";
 }
-.verse {
+.verse-span {
   transition: 0.4s;
   cursor: pointer;
+    background-color: rgb(171,160,156, 0);
+
   padding: 2px;
+  will-change: line-height;
 }
 
-.verse.highlight {
+.verse-span.highlight {
   transition: 0.4s;
-  background-color: #ABA09C;
   border-radius: 5px;
-  padding: 10px;
+  background-color: rgb(171,160,156);
+  line-height: 1.6;
+  z-index: 15;
 }
 
 select, option{
@@ -81,6 +86,7 @@ select, option{
 }
 
 .section {
+  display: none;
   opacity: 0;
   pointer-events: none;       /* prevents clicks when hidden */
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -88,7 +94,12 @@ select, option{
 }
 
 .section.active {
+  display: flex;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+#bookDisplay s1{
+  @apply text-3xl;
 }
