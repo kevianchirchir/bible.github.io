@@ -8,8 +8,7 @@ let chapterCount = 0;
 async function loadVerse() {
   try {
 
-    const response = await fetch(`https://bible-github-io.onrender.com/bible/${versionSelected}/${chapterSelected}`);
-    const userData = await response.json();
+const response = await fetch(`https://bible-github-io.onrender.com/bible/${versionSelected}/${chapterSelected}?content-type=html&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=true`);    const userData = await response.json();
 
     bookDisplay.innerHTML = userData.data.content;
     nextId = userData.data.next?.id || "N/A";
