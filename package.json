@@ -1,33 +1,33 @@
 {
+  "name": "my-react-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@tailwindcss/cli": "^4.2.0",
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "node-fetch": "^3.3.2",
-    "tailwindcss": "^4.2.0"
+    "@boxicons/react": "^1.0.3",
+    "boxicons": "^2.1.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "tailwind-scrollbar": "^4.0.2"
-  },
-  "name": "bible",
-  "version": "1.0.0",
-  "description": "A web-based Bible app that lets users read and navigate chapters, with multiple versions available. Loosely based off YouVersion's Bible App, the app will feature:\r - Highlighting Verses\r - Profiles\r - Creating Notes\r - Pulling Bible books and verses",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kevianchirchir/bible.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/kevianchirchir/bible.github.io/issues"
-  },
-  "homepage": "https://github.com/kevianchirchir/bible.github.io#readme"
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
+  }
 }

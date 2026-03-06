@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "best";
+  src: url("../fonts/Avenir\ Regular.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+body{
+  background-image: url(../images/scenery.jpg);
+  overflow: hidden;
+}
+
+*{
+  font-family: "best";
+}
+.hide-scrollbar::-webkit-scrollbar {
+  @apply bg-zinc-900/50;
+  width: 5px;
+}
+
+
+#bookDisplay .s1{
+  @apply text-3xl font-semibold mb-5 text-center;
+}
+
+#bookDisplay .p{
+  @apply text-xl
+}
+
+
+#bookDisplay .v{
+  @apply text-xs p-1 text-red-300
+}
+
+#bookDisplay .b{
+  height: 20px;
+}
